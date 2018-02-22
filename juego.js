@@ -297,8 +297,9 @@ function principal(){
     dibujaMonte();
     dibujaNube();
     dibujaArbol();
-    dibujaSuelo();
-    if(nivel.empezar){
+    
+    if(nivel.empezar
+        dibujaSuelo();
         dibujaNim();
     }
     dibujaFuego();
