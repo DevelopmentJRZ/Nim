@@ -92,8 +92,8 @@ function cargaImagenes(){
 
 
 
-var ancho = 360;
-var alto = 640;
+var ancho = screen.width;
+var alto = screen.height;
 var canvas,ctx;
 
 function inicializa(){
@@ -112,9 +112,9 @@ function inicia(){
         ctx.font = "40px impact";
         ctx.fillStyle = '#555555';
         ctx.textAlign = "center";
-        ctx.fillText(`Bienvenido`,180,200);
+        ctx.fillText(`Bienvenido`,ancho/2,200);
         ctx.font = "15px impact";
-        ctx.fillText(`'Tab' para iniciar`,180,230);
+        ctx.fillText(`'Tab' para iniciar`,ancho/2,230);
     }
 }
 
@@ -123,11 +123,11 @@ function borraCanvas(){
     canvas.height = alto;
 }
 
-var suelo = 360;
+var suelo = alto - 285;
 var tNim = {y: suelo, vy:0, gravedad: 2, salto: 28, vymax: 9, saltando: false};
 var nivel = {velocidad: 1.2, marcador: 0, vida: false, empezar:false};
 var fuego = {x: ancho+100 , y: suelo+25};
-var nube = {x: 360, y: 0, velocidad: 1};
+var nube = {x: ancho, y: 0, velocidad: 1};
 var monte = {x: ancho, y: suelo-310,velocidad:0.3};
 var suelog = {x: 0, y:suelo+75};
 var arbol = {x: ancho , y: suelo-85};
@@ -270,15 +270,15 @@ function gravedad(){
 function puntuacion(){
     ctx.font = "30px impact";
     ctx.fillStyle = '#555555';
-    ctx.fillText(`${nivel.marcador}`,300,50);
+    ctx.fillText(`${nivel.marcador}`,ancho - 50,50);
     
     if(nivel.vida){
         ctx.font = "40px impact";
         ctx.fillStyle = '#555555';
         ctx.textAlign = "center";
-        ctx.fillText(`GAME OVER`,180,200);
+        ctx.fillText(`GAME OVER`,ancho/2,200);
         ctx.font = "15px impact";
-        ctx.fillText(`'Tab' para reiniciar`,180,230); 
+        ctx.fillText(`'Tab' para reiniciar`,ancho/2,230); 
 
     }
 }
