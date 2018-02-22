@@ -298,7 +298,7 @@ function principal(){
     dibujaNube();
     dibujaArbol();
     
-    if(nivel.empezar
+    if(nivel.empezar){
         dibujaSuelo();
         dibujaNim();
     }
